@@ -21,12 +21,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return (
-        f""
-        f""
-        f""
-        f""
-        f""
-        f""
+        "<a href='/api/v1.0/precipitation'>/api/v1.0/precipitation</a>"
+        "<a href='/api/v1.0/stations'>/api/v1.0/stations</a>,"
+        "<a href='<a href='/api/v1.0/tobs'>/api/v1.0/tobs</a>",
+        "<a href='/api/v1.0/tobs'>/api/v1.0/tobs</a>",
+        "/api/v1.0/<start>",
+        " - for example: <a href='/api/v1.0/2016-08-23'>/api/v1.0/2016-08-23</a>",
+        "/api/v1.0/<start>/<end>",
+        " - for example: <a href='/api/v1.0/2016-08-23/2017-08-23'>/api/v1.0/2016-08-23/2017-08-23</a>"
     )
 
 @app.route("/api/v1.0/precipitation")
