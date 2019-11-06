@@ -1,0 +1,81 @@
+body {
+    background-color: lightgray
+}
+
+.header_graph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 432px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    background-color: darkturquoise;
+}
+
+.brand {
+    margin-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-color: white;
+}
+
+h3 {
+    font-family: serif;
+    font-weight: bold;
+    color: darkturquoise;
+}
+
+h4 {
+    font-family: serif;
+    font-weight: bold;
+    color: darkturquoise;
+    text-align: center;
+}
+
+.graph {
+    display: inline-block;
+    width: 65%;
+    max-width: 432px;
+    float: left;
+    padding-right: 10px;
+}
+
+.viz_graph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 90%;
+    padding-top: 10px;
+}
+
+.det_graph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 432px;
+}
+
+.current_viz {
+    background-color: turquoise;
+}
+
+.viz_hover:hover {
+    background-color: paleturquoise;
+}
+
+.viz_hover:hover h4{
+    color: white;
+}

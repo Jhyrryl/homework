@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Latitude vs Wind Speed</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="Resources/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+        <a class="navbar-brand ml-5" href="index.html"><h4 class="brand">Latitude</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Plots
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                        <a class="dropdown-item" href="humidty.html">Humidity</a>
+                        <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                        <a class="dropdown-item disabled" href="wind.html">Wind Speed</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="comparisons.html">Comparison</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container-flow" style="margin-top: 30px">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <h3>Wind Speed</h3>
+                    <hr>
+                    <img class="det_graph" src="Visualizations/lat_vs_wind.png">
+                    <p>There is no correlation between equatorial distance and wind speed, however that might change at different times throughout the year, for example, during hurricane season.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h3>Visualizations</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12 viz_hover">
+                            <a href="temperature.html"><img class="viz_graph" src="Visualizations/lat_vs_temp.png" alt="Lat vs. Temperature" title="Lat vs. Temperature"></a>
+                        </div>
+                        <div class="col-xl-6 col-lg-12 viz_hover">
+                            <a href="humidty.html"><img class="viz_graph" src="Visualizations/lat_vs_humidity.png" alt="Lat vs. Humidity" title="Lat vs. Humidity"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12 viz_hover">
+                            <a href="cloudiness.html"><img class="viz_graph" src="Visualizations/lat_vs_cloudiness.png" alt="Lat vs. Cloudiness" title="Lat vs. Cloudiness"></a>
+                        </div>
+                        <div class="col-xl-6 col-lg-12 current_viz">
+                            <a class="disabled" href="wind.html"><img class="viz_graph" src="Visualizations/lat_vs_wind.png" alt="Lat vs. Wind Speed" title="Lat vs. Wind Speed"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</body>
+    
+</html>
