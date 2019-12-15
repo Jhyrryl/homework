@@ -27,27 +27,60 @@ function buildCharts(sample) {
 
     // @TODO: Use `d3.json` to fetch the sample data for the plots
     d3.json(`./samples/${sample}`).then(sample_data => {
-
-    // @TODO: Build a Bubble Chart using the sample data
-    
-
-    // @TODO: Build a Pie Chart
-    // HINT: You will need to use slice() to grab the top 10 sample_values,
-    // otu_ids, and labels (10 each).
-        graph_data = Object.entries(sample_data).slice(0,10)
+        graph_data = Object.entries(sample_data)
         console.log(graph_data)
+        
+        // @TODO: Build a Pie Chart
+        // HINT: You will need to use slice() to grab the top 10 sample_values,
+        // otu_ids, and labels (10 each).
         var data = [{
-            values: graph_data[2][1],
-            labels: graph_data[1][1],
-            type: 'pie'
+            type: 'pie',
+            values: graph_data[2][1].slice(0,10),
+            labels: graph_data[0][1].slice(0,10),
+            hovertext: graph_data[1][1].slice(0,10),
+            automargin: true
         }];
 
         var layout = {
             height: 400,
-            width: 500
+            width: 400,
+            margin:{"t": 25, "b": 0, "l": 0, "r": 0}
         };
 
         Plotly.newPlot('pie', data, layout);
+
+        // @TODO: Build a Bubble Chart using the sample data
+        var desired_maximum_marker_size = 40;
+        var size = [400, 600, 800, 1000];
+        var trace = {
+          x: graph_data[0][1],
+          y: graph_data[2][1],
+          text: graph_data[1][1],
+          mode: 'markers',
+          marker: {
+            colorscale: 'Earth',
+            color: graph_data[0][1],
+            size: graph_data[2][1],
+          }
+        };
+
+        var data = [trace];
+
+        var layout = {
+          height: 500,
+          width: 1250,
+          x_label: 'OTU ID',
+          xaxis: {
+            title: "OTU ID",
+            range: [0, graph_data[0][1]]
+          },
+          yaxis: {
+            range: [0, 350]
+          },
+          showlegend: false
+        };
+
+        Plotly.newPlot('bubble', data, layout);    
     });
 }
 
